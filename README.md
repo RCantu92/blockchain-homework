@@ -2,6 +2,10 @@
 
 ![](https://techcrunch.com/wp-content/uploads/2017/10/gettyimages-844081956.jpg?w=1390&crop=1)
 
+This document outlines the steps to begin your two-node RivNet blockchain! The steps are as follows.
+
+## Command Line (ie, GitBash and Terminal):
+
 To initiate the network, you will need to:
 
 1. Install get and tools. Go to https://geth.ethereum.org/downloads/ and install the latest "Geth & Tools" for your operating system.
@@ -10,17 +14,19 @@ To initiate the network, you will need to:
 
 3. Next, you will navigate to your new blockchain-tools directory through the command line.
 
-4. In the blockchain-tools directory, you will want to create two node accounts by typing "./geth account new --datadir node1" and "./geth account new --datadir node2" respectively. Copy and paste the address and password into another .txt file window, as they will be needed momentarily.
+4. In the blockchain-tools directory, you will want to create two node accounts by typing "./geth account new --datadir node1" and "./geth account new --datadir node2" respectively. Set the password for node1 to "121" and node2 to "122". Copy and paste the addresses and passwords into a address.txt and password.txt file, and save into the corresponding node's directory, as they will be needed momentarily.
 
-5. With the line "./puppeth" you will navigate through the menu and create a new blockchain with a "Clique (Proof of Authority)" consensus algorithm. 
+5. While still in the command line window, type "./puppeth" and navigate through the menu and create a new genesis block with a name of "rivnet", a "Clique (Proof of Authority)" consensus algorithm, and a network ID of "223".
 
-6. You will want to copy and paste both account addresses to seal on the new blockchain. You will copy and paste as well on accounts to be pre-funded.
+6. You will want to copy and paste both account addresses to seal on the new blockchain. You will also copy and paste both accounts to be pre-funded.
 
 7. Choose "no" for pre-funding pre-compiled accounts.
 
-8. Once you have created your blockchain, and find yourself on the main menu, choose "manage existing genesis" option.
+8. Once you have created your genesis block, and find yourself on the main menu, choose "manage existing genesis" option.
 
-9. From there, export genesis configurations. You will only need "rivnet.json", so you can delete "rivnet-harmony.json".
+9. From there, click "export genesis configurations". You will only need "rivnet.json", so you can delete "rivnet-harmony.json". You should read the following:
+
+![](./Screenshots/puppeth_config.png)
 
 10. Next, you will initialize both nodes with "rivnet.json" using geth.
 
@@ -74,6 +80,8 @@ To initiate the network, you will need to:
 
 17. Click "Keystore File," then "SELECT WALLET FILE," then navigate to the keystone file for node1 in the node1 directory. Input the password you set when creating node1, which should be in the password.txt file in the node1 directory.
 
-18. Put the node2 address in the "To Address" field, select an amount and transaction fee and click "Send Transaction."
+18. Put the node2 address in the "To Address" field, select an amount and transaction fee and click "Send Transaction." You should read something similar to the following:
+
+![](./Screenshots/tx_metadata.png)
 
 19. Congrats! You have successfully sent a transaction on the RivNet blockchain!
